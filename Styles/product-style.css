@@ -1,0 +1,57 @@
+* {
+  background-color: #F4EEE0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F4EEE0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #393646;
+  display: block;
+  font-family: junge;
+}
+
+.sidenav img {
+  width: 20px; /* Adjusts the icon size */
+  height: 20px; /* Adjusts the icon size */
+  margin-right: 10px; /* Adds space between the icon and text */
+  vertical-align: middle; /* Ensures the icon is vertically centered with the text */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.header {
+  text-align: center;
+  font-family: nunito;
+  font-size: 100px;
+  margin: 0;
+  padding-left: 80px;
+}
+
+p {
+  margin: 0 !important;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}

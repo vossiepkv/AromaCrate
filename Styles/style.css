@@ -1,0 +1,354 @@
+/*--Index.html--*/
+* {
+  background-color: #F4EEE0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #F4EEE0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #393646;
+  display: block;
+  font-family: junge;
+}
+
+.sidenav img {
+  width: 20px; /* Adjusts the icon size */
+  height: 20px; /* Adjusts the icon size */
+  margin-right: 10px; /* Adds space between the icon and text */
+  vertical-align: middle; /* Ensures the icon is vertically centered with the text */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.header {
+  text-align: center;
+  font-family: nunito;
+  font-size: 120px;
+  margin: 0;
+}
+
+p {
+  margin: 0 !important;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+spline-viewer {
+  display: block;
+  width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+.content-section {
+  text-align: center;
+  font-family: junge;
+}
+
+.content-section .heading {
+  padding-bottom: 3rem;
+  font-size: 56px;
+}
+
+.content-section .sub {
+  font-size: 48px;
+  padding-bottom: 2rem;
+}
+
+.content-section .text {
+  font-size: 30px;
+  font-family: "noto sans";
+}
+
+.how-it-works-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 50px;
+}
+
+.how-it-works-item {
+  text-align: center;
+}
+
+.how-it-works-item img {
+  height: 100px;  /* Ensures all images are 100px in height */
+  width: 100px;   /* Ensures all images are 100px in width */
+}
+
+/* Specific styles for the arrow images */
+.how-it-works-item .arrow1,
+.how-it-works-item .arrow2 {
+  transform: rotate(45deg);
+}
+
+.how-it-works-item .subscribe,
+.how-it-works-item .fav,
+.how-it-works-item .fastish {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #393646;
+  font-family: junge;
+}
+.sub-button {
+  padding-left: 39rem;
+  padding-bottom: 20px;
+}
+
+.sub-button:hover {
+  padding-left: 39rem;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.sub-button a {
+  background-color: #6D5D6E;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Ensure the anchor tag inside the button maintains the same style across all states */
+.sub-button a:link,
+.sub-button a:visited,
+.sub-button a:hover,
+.sub-button a:active {
+  background-color: #6D5D6E;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Override any default browser behavior */
+.sub-button a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sub-button a:visited {
+  text-decoration: none;
+  color: #ffffff !important; /* Force color to remain white */
+}
+
+/* Additional button styling */
+.button-18 {
+  align-items: center;
+  background-color: #6D5D6E;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: junge, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover {
+  background-color: #574b5e; /* Slightly darker on hover */
+  color: #ffffff;
+}
+
+.button-18:active {
+  background-color: #574b5e; /* Retain the same color when active */
+  color: #ffffff;
+}
+
+.button-18:visited {
+  background-color: #6D5D6E;
+  color: #ffffff !important; /* Ensure text remains white */
+  text-decoration: none !important; /* Force no underline */
+}
+
+.brand-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.brand-container .heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Junge', sans-serif;
+  color: #393646;
+}
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logo {
+  max-height: 80px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle; /* Ensures logos align properly */
+}
+
+.brand-logo5 {
+  max-height: 80px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle; /* Ensures logos align properly */
+  margin-top: 5px; /* Adjust this value as needed */
+}
+
+.brand-logo6 {
+  max-height: 80px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle; /* Ensures logos align properly */
+  margin-bottom: 5px; /* Adjust this value as needed */
+}
+
+.brand-container .heading
+{
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.review-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.review-container .heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Junge', sans-serif;
+  color: #393646;
+}
+
+.review-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between cards */
+}
+
+.review-card {
+  background-color: #6D5D6E; /* Card background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  max-width: 300px; /* Max width of the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for card */
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center; /* Center text in the card */
+}
+
+.profile-img {
+  width: 80px; /* Size of the profile image */
+  height: 80px; /* Size of the profile image */
+  border-radius: 50%; /* Circular profile image */
+  object-fit: cover; /* Cover the image properly */
+  margin-bottom: 15px; /* Space between image and text */
+  background-color: #6D5D6E;
+}
+
+.review-text
+{
+  background-color: #6D5D6E;
+  color: #ffffff;
+  font-family: 'Noto Sans';
+}
+
+.review-author
+{
+  background-color: #6D5D6E;
+  color: #ffffff;
+  font-family: 'Noto Sans';
+}
+
+.review-container .heading
+{
+  padding-bottom: 30px;
+}
+
+/* Footer Styling */
+.footer {
+  color: #4F4557;
+  padding: 40px 0;
+  padding-left: 110px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  max-width: 200px;
+  margin: 0 20px;
+}
+
+.footer-section h4 {
+  font-family: 'Junge', sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+}
+
+.footer-section a {
+  display: block;
+  color: #4F4557;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
+
+
+/*--product--*/

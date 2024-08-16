@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AromaCrates</title>
+    <link rel="preload" href="https://unpkg.com/@splinetool/viewer@1.9.12/build/spline-viewer.js" as="script">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Junge' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!--Keeping 3D model rendered while on the page-->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const splineViewer = document.querySelector('spline-viewer');
+
+        function keepSplineActive() {
+          splineViewer.update(); 
+          requestAnimationFrame(keepSplineActive);
+        }
+        keepSplineActive();
+      });
+    </script>
+    
+    <!--Navigation Bar-->
+    <div class="sidenav">
+      <a href="#top"><img class="home-button" src="imgs/home.png">Home</a>
+      <a href="product.html"><img class="product-button" src="imgs/box.png">Products</a>
+      <a href="conatct.html"><img class="contact-button" src="imgs/mobile.png">Contact Us</a>
+      <a href="about.html"><img class="about-button" src="imgs/information-button.png">About Us</a>
+      <a href="account.html"><img class="account-button" src="imgs/profile-user.png">Account</a>
+    </div>
+
+    <!--Header-->
+    <div class="header" id="top">
+      <p>AromaCrates</p>
+    </div>
+    <!--3D Model-->
+    
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.12/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/BdF2HaDHIef55DO2/scene.splinecode"></spline-viewer>
+
+    <div class="sub-button">
+      <button class="button-18" role="button"><a href="product.html">Subscribe Now!</a></button>
+    </div>
+
+    <!--Content section-->
+    <div class="content-section">
+      <p class="heading">Monthly Subscription Fragrances</p>
+    
+      <p class="sub">How It Works</p>
+
+      <p class="text">Explore a different amazing perfume every month</p>
+      <p class="text">with authentic designer brands.</p>
+    </div>
+
+    
+    <div class="how-it-works-container">
+      <div class="how-it-works-item">
+        <img class="subs" src="imgs/email.png">
+        <p class="subscribe">Subscribe</p>
+      </div>
+      <div class="how-it-works-item">
+        <img class="arrow1" src="imgs/arrow (1).png">
+      </div>
+      <div class="how-it-works-item">
+        <img class="perfume" src="imgs/perfume.png">
+        <p class="fav">Pick Fav Brands</p>
+      </div>
+      <div class="how-it-works-item">
+        <img class="arrow2" src="imgs/arrow (1).png">
+      </div>
+      <div class="how-it-works-item">
+        <img class="fast" src="imgs/fast-delivery.png">
+        <p class="fastish">Fast Delivery</p>
+      </div>
+    </div>
+    
+    <!-- Branding Section -->
+<div class="brand-container">
+  <p class="heading">A Huge Range Of Brands</p>
+  <div class="logo-row">
+    <img class="brand-logo" src="imgs/pngimg.com - gucci_PNG25.png" alt="Gucci">
+    <img class="brand-logo" src="imgs/prada-1.svg" alt="Prada">
+    <img class="brand-logo" src="imgs/f04a88cf8b203eb4a857074a43b05d58.png" alt="Saint Laurent">
+    <img class="brand-logo" src="imgs/chanel-logo-black-image-4.png" alt="Chanel">
+    <img class="brand-logo5" src="imgs/Dior_Logo.svg.png" alt="Dior">
+    <img class="brand-logo6" src="imgs/versace-3-logo-png-transparent.png" alt="Versace">
+  </div>
+</div>
+
+<!-- Review Section -->
+<div class="review-container">
+  <p class="heading">Trusted Reviews</p>
+  <div class="review-row">
+    <div class="review-card">
+      <img class="profile-img" src="imgs/profile-user.png" alt="Profile Image">
+      <p class="review-text">"AromaCrate has completely transformed my fragrance game! Each month, I receive a beautifully curated selection of scents that perfectly match my preferences. The quality of the fragrances is exceptional, and the packaging always feels luxurious. I love how easy it is to discover new favorites without having to visit multiple stores. Highly recommend this service to any fragrance enthusiast!"</p>
+      <br>
+      <p class="review-author">- John Doe</p>
+    </div>
+    <div class="review-card">
+      <img class="profile-img" src="imgs/profile-user.png" alt="Profile Image">
+      <p class="review-text">"As someone who loves trying new perfumes, AromaCrate has been a game-changer for me. The monthly subscription delivers a delightful variety of high-quality fragrances right to my door. Each box is thoughtfully designed, making the unboxing experience feel special. The personalized approach ensures I get scents that truly match my taste. AromaCrate is a must-have for anyone who enjoys discovering new and unique fragrances."</p>
+      <br>
+      <p class="review-author">- Jane Smith</p>
+    </div>
+    <div class="review-card">
+      <img class="profile-img" src="imgs/profile-user.png" alt="Profile Image">
+      <p class="review-text">"I’ve been using AromaCrate for several months now, and I couldn’t be happier with the service. Every month, I’m thrilled to receive a new fragrance that perfectly suits my style. The selection process is top-notch, and the fragrances are always of premium quality. The convenience of having new scents delivered directly to me is fantastic. AromaCrate is a great subscription for anyone who appreciates a fresh, curated fragrance experience."</p>
+      <br>
+      <p class="review-author">- Alex Johnson</p>
+    </div>
+  </div>
+</div>
+
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About AromaCrate</h4>
+      <p>Your monthly fragrance subscription service, delivering premium scents to your doorstep.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: support@aromacrate.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Address: 123 Fragrance Lane, Aroma City, SC 12345</p>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/aromacrate" target="_blank">Facebook</a>
+      <a href="https://twitter.com/aromacrate" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/aromacrate" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Contact Us</a>
+      <a href="#">About Us</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 AromaCrate. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+  </body>
+</html>
