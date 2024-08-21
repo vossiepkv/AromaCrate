@@ -1,16 +1,13 @@
-* {
-  background-color: #F4EEE0;
-}
-
+/* General page styling */
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Junge', sans-serif;
+  background-color: #F4EEE0;
 }
 
 .sidenav {
   height: 100%;
   width: 200px;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: #F4EEE0;
@@ -19,29 +16,63 @@ body {
 }
 
 .sidenav a {
-  padding: 6px 6px 6px 32px;
+  padding: 6px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #393646;
   display: block;
-  font-family: junge;
 }
 
 .sidenav img {
-  width: 20px; /* Adjusts the icon size */
-  height: 20px; /* Adjusts the icon size */
-  margin-right: 10px; /* Adds space between the icon and text */
-  vertical-align: middle; /* Ensures the icon is vertically centered with the text */
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.account-settings-container {
+  margin-left: 200px;
+  padding: 20px;
+  background-color: #F4EEE0;
 }
 
-.header {
-  text-align: center;
-  font-family: nunito;
-  font-size: 120px;
-  margin: 0;
+.account-form {
+  background-color: #F4EEE0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-form .form-group {
+  margin-bottom: 15px;
+}
+
+.account-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.account-form input,
+.account-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.account-form button {
+  background-color: #6D5D6E;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.account-form button:hover {
+  background-color: #524951;
 }
