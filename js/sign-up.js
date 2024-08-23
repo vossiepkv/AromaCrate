@@ -1,33 +1,126 @@
-let passwordFieldVisible = false;
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
-function showPasswordField() {
-  const emailInput = document.getElementById('inputEmail3');
-  const passwordInput = document.getElementById('inputPassword3');
-  const emailErrorMessage = document.getElementById('error-message');
-  const passwordErrorMessage = document.getElementById('password-error-message');
-  const signUpButton = document.getElementById('sign-up-button');
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDlQ_MzxTHQ-dQdq0Dc5qWuBpvH2YufOH4",
+  authDomain: "aromacrates.firebaseapp.com",
+  databaseURL: "https://aromacrates-default-rtdb.firebaseio.com",
+  projectId: "aromacrates",
+  storageBucket: "aromacrates.appspot.com",
+  messagingSenderId: "420220632902",
+  appId: "1:420220632902:web:22d273413b5624ec0fef47"
+};
 
-  // Initial validation for the email field
-  if (emailInput.value.trim() === '') {
-    emailErrorMessage.style.display = 'block';
-    return; // Stop the function if email is invalid
-  } else {
-    emailErrorMessage.style.display = 'none';
-  }
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-  // If password field is not yet visible, show it
-  if (!passwordFieldVisible) {
-    document.getElementById('password-container').style.display = 'block';
-    signUpButton.innerText = 'Submit';
-    passwordFieldVisible = true;
-  } else {
-    // Password validation
-    if (passwordInput.value.trim().length < 6) {
-      passwordErrorMessage.style.display = 'block';
-    } else {
-      passwordErrorMessage.style.display = 'none';
-      // Set button type to submit only if password is valid
-      signUpButton.setAttribute('type', 'submit');
-    }
-  }
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
+// Handling the Sign-Up Process
+const submit = document.getElementById('sign-up-button');
+submit.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const email = document.getElementById('inputEmail3').value;
+  const password = document.getElementById('inputPassword3').value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      alert("User created successfully");
+      // Additional actions here...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+
+
+
+
+
+
+
+/*
+const auth = firebase.auth();
+const database = firebase.database();
+
+function register() {
+    const email = document.getElementById('inputEmail3').value;
+    const password = document.getElementById('inputPassword3').value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        // Store user data in the database
+        const database_ref = database.ref('users/' + user.uid);
+
+        const user_data = {
+            email: email,
+            password: password,
+            last_login: Date.now()
+        };
+
+        database_ref.set(user_data);
+
+        alert('User Created!');
+    })
+    .catch((error) => {
+        const error_code = error.code;
+        const error_message = error.message;
+
+        alert(error_message);
+    });
 }
+
+
+
+
+
+function validateEmail ()
+{
+  
+expression = /^[^@]+@\w+(\.\w+)+\w$/
+  if (expression.test(email) == true) {
+    return true
+  } else {
+    return false
+  }
+
+}
+
+function validatePassword (password)
+{
+if (password < 6)
+{
+  return false;
+} else {
+  return true;
+}
+}
+
+function validateField(field)
+{
+  if(field == null)
+  {
+    return false;
+  } 
+  if (field.length <= 0)
+  {
+    return false;
+  } else{
+    return true;
+  }
+    
+  
+}
+  */
