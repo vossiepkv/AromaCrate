@@ -15,9 +15,35 @@
     <div class="sidenav">
       <a href="index.html"><img class="home-button" src="imgs/home.png">Home</a>
       <a href="product.html"><img class="product-button" src="imgs/box.png">Products</a>
-      <a href="conatct.html"><img class="contact-button" src="imgs/mobile.png">Contact Us</a>
+      <a href="contact.html"><img class="contact-button" src="imgs/mobile.png">Contact Us</a>
       <a href="about.html"><img class="about-button" src="imgs/information-button.png">About Us</a>
       <a href="account.html"><img class="account-button" src="imgs/profile-user.png">Account</a>
     </div>
+
+    <!--Header-->
+    <p class="header">Sign Up Today!</p>
+
+    <!--Sign Up Section-->
+    <div class="container">
+      <div class="sign-up-container">
+        <form>
+          <div class="mb-3">
+            <label for="inputEmail3" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail3">
+            <div id="error-message" style="color: red; display: none;">Please enter your email address.</div>
+          </div>
+          <div class="mb-3" id="password-container" style="display: none;">
+            <label for="inputPassword3" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword3">
+          </div>
+          <div id="password-error-message" style="color: red; display: none;">
+            Password must be at least 6 characters long.
+          </div>
+          <button type="button" class="btn btn-primary" id="sign-up-button" onclick="showPasswordField()">Continue</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/sign-up.js"></script>
   </body>
-  </html>
+</html>
