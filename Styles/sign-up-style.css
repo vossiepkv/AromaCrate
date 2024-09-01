@@ -1,11 +1,13 @@
-* {
-  background-color: #F4EEE0;
-}
-
-body {
+/* Ensure the entire page has the correct background color */
+html, body {
+  background-color: #F4EEE0 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: "Lato", sans-serif;
 }
 
+/* Sidebar Navigation */
 .sidenav {
   height: 100%;
   width: 200px;
@@ -39,26 +41,69 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
+/* Header Styles */
 .header {
   text-align: center;
   font-family: "Nunito", sans-serif;
   font-size: 7rem;
   margin: 0;
-  padding-left: 200px;
+  padding-left: 150px;
   padding-top: 30px;
   padding-bottom: 8rem;
+  color: #393646;
 }
 
-.container{
-  margin-left: 80px;
-  margin-right: 0 !important;
+/* Main Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 150px !important; /* Adjust to align with the sidebar */
+  background-color: transparent;
 }
 
+/* Sign-Up Container */
 .sign-up-container {
-  max-width: 400px;
-  margin: 0 auto; /* Explicitly centers the container */
   padding: 30px;
-  background-color: #F4EEE0;
+  background-color: #F4EEE0 !important; /* Matches the body background color */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow for depth */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
 }
+
+/* Ensure No Extra Background Color */
+.container, .sign-up-container, .header {
+  background-color: transparent !important;
+}
+
+.user-status {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between links */
+}
+
+.user-status a {
+  color: #000; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.user-status a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Example CSS to style the logout button */
+#logout-button {
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: #4F4557; /* Red color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  background-color: #4F4557; /* Darker red */
+}
+

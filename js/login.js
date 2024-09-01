@@ -1,6 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,14 +18,11 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-// Initialize Firebase Realtime Database and get a reference to the service
-const database = getDatabase(app);
-
-// Handling the Sign-Up Process
-const submit = document.getElementById('sign-up-button');
+// Handling the Login Process
+const loginButton = document.getElementById('sign-up-button'); // Reuse the same button ID for login
 const errorMessageDiv = document.getElementById('form-error-message');
 
-submit.addEventListener("click", function (event) {
+loginButton.addEventListener("click", function (event) {
   event.preventDefault();
 
   // Clear previous error messages
@@ -49,37 +45,25 @@ submit.addEventListener("click", function (event) {
     return;
   }
 
-  if (password.length < 6) {
-    errorMessageDiv.textContent = 'Password must be at least 6 characters long.';
-    errorMessageDiv.style.display = 'block';
-    return;
-  }
-
-  // Create user with email and password
-  createUserWithEmailAndPassword(auth, email, password)
+  // Sign in with email and password
+  signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
 
-      // Store user data in the Realtime Database
-      set(ref(database, 'users/' + user.uid), {
-        email: email,
-        last_login: Date.now()
-      });
-
       // Redirect to a different page
-      window.location.href = "index.html";
+      window.location.href = "index.html"; // Redirect to account page or any other page
     })
     .catch((error) => {
       const errorCode = error.code;
 
       // Display specific error messages
-      if (errorCode === 'auth/email-already-in-use') {
-        errorMessageDiv.textContent = 'This email address is already in use. Please try another one.';
+      if (errorCode === 'auth/user-not-found') {
+        errorMessageDiv.textContent = 'No user found with this email address.';
+      } else if (errorCode === 'auth/wrong-password') {
+        errorMessageDiv.textContent = 'Incorrect password. Please try again.';
       } else if (errorCode === 'auth/invalid-email') {
         errorMessageDiv.textContent = 'The email address is not valid.';
-      } else if (errorCode === 'auth/weak-password') {
-        errorMessageDiv.textContent = 'The password is too weak. Please use a stronger password.';
       } else {
         // General error message
         errorMessageDiv.textContent = 'An error occurred: ' + error.message;
@@ -88,4 +72,17 @@ submit.addEventListener("click", function (event) {
       // Show the error message
       errorMessageDiv.style.display = 'block';
     });
+});
+
+// Check the current authentication state
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in
+    console.log("User is logged in:", user.email);
+    // You can also redirect them to a specific page or show user-specific content here
+  } else {
+    // User is signed out
+    console.log("No user is logged in");
+    // Optionally, redirect them to the login page
+  }
 });

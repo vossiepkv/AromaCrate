@@ -1,7 +1,7 @@
 /* General page styling */
 body {
   font-family: 'Junge', sans-serif;
-  background-color: #F4EEE0;
+  background-color: #F4EEE0 !important;
 }
 
 .sidenav {
@@ -76,3 +76,35 @@ body {
 .account-form button:hover {
   background-color: #524951;
 }
+
+.user-status {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between links */
+}
+
+.user-status a {
+  color: #000; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.user-status a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Example CSS to style the logout button */
+#logout-button {
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: #4F4557; /* Red color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  background-color: #4F4557; /* Darker red */
+}
+
