@@ -55,37 +55,43 @@ submit.addEventListener("click", function (event) {
     return;
   }
 
-  // Create user with email and password
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
 
-      // Store user data in the Realtime Database
-      set(ref(database, 'users/' + user.uid), {
-        email: email,
-        last_login: Date.now()
-      });
+    // Log success to verify
+    console.log("User created with UID:", user.uid);
 
+    // Store user data in the Realtime Database
+    set(ref(database, 'users/' + user.uid), {
+      email: email,
+      last_login: Date.now()
+    })
+    .then(() => {
+      console.log("User data saved to RTDB.");
       // Redirect to a different page
       window.location.href = "index.html";
     })
     .catch((error) => {
-      const errorCode = error.code;
-
-      // Display specific error messages
-      if (errorCode === 'auth/email-already-in-use') {
-        errorMessageDiv.textContent = 'This email address is already in use. Please try another one.';
-      } else if (errorCode === 'auth/invalid-email') {
-        errorMessageDiv.textContent = 'The email address is not valid.';
-      } else if (errorCode === 'auth/weak-password') {
-        errorMessageDiv.textContent = 'The password is too weak. Please use a stronger password.';
-      } else {
-        // General error message
-        errorMessageDiv.textContent = 'An error occurred: ' + error.message;
-      }
-
-      // Show the error message
-      errorMessageDiv.style.display = 'block';
+      console.error("Error saving to RTDB:", error);
     });
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    console.error("Error creating user:", error);
+
+    if (errorCode === 'auth/email-already-in-use') {
+      errorMessageDiv.textContent = 'This email address is already in use. Please try another one.';
+    } else if (errorCode === 'auth/invalid-email') {
+      errorMessageDiv.textContent = 'The email address is not valid.';
+    } else if (errorCode === 'auth/weak-password') {
+      errorMessageDiv.textContent = 'The password is too weak. Please use a stronger password.';
+    } else {
+      errorMessageDiv.textContent = 'An error occurred: ' + error.message;
+    }
+
+    errorMessageDiv.style.display = 'block';
+  });
+
 });
