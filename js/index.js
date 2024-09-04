@@ -38,6 +38,9 @@ onAuthStateChanged(auth, (user) => {
     userStatusDiv.innerHTML = `<p> <a href="login.html">Log In</a><a href="signup.html">Sign Up</a> </p>`;
     logoutButton.classList.add('d-none'); // Hide logout button
     accountLink.style.display = 'none'; // Hide account link
+    // Hide or clear avatar image
+    document.getElementById('avatar-img').style.display = 'none';
+    document.getElementById('avatar-img').src = '';
   }
 });
 
@@ -48,16 +51,23 @@ function loadUserData(userId) {
   get(userRef).then((snapshot) => {
     if (snapshot.exists()) {
       const userData = snapshot.val();
+      const avatarImg = document.getElementById('avatar-img');
       if (userData.avatar) {
-        document.getElementById('avatar-img').src = userData.avatar;
+        avatarImg.src = userData.avatar;
+        avatarImg.style.display = 'block'; // Show avatar image if it exists
+      } else {
+        avatarImg.style.display = 'none'; // Hide avatar if no avatar data
       }
     } else {
       console.log("No user data found");
+      document.getElementById('avatar-img').style.display = 'none';
     }
   }).catch((error) => {
     console.error("Error loading user data:", error);
+    document.getElementById('avatar-img').style.display = 'none';
   });
 }
+
 
 // Add event listener to the logout button
 logoutButton.addEventListener('click', () => {
