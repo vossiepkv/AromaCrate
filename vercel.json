@@ -1,18 +1,17 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "index.html",
-      "use": "@vercel/static"
+      "use": "@vercel/static",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/contact.html", "dest": "/contact.html" },
-    { "src": "/about.html", "dest": "/about.html" },
-    { "src": "/product.html", "dest": "/product.html" },
-    { "src": "/account.html", "dest": "/account.html" },
-    { "src": "/imgs/(.*)", "dest": "/imgs/$1" },
-    { "src": "/Styles/(.*)", "dest": "/Styles/$1" },
-    { "src": "/js/(.*)", "dest": "/js/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
