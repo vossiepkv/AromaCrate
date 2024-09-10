@@ -52,7 +52,7 @@ loginButton.addEventListener("click", function (event) {
       const user = userCredential.user;
 
       // Redirect to a different page
-      window.location.href = "index.html"; // Redirect to account page or any other page
+      window.location.href = "../index.html"; // Redirect to account page or any other page
     })
     .catch((error) => {
       const errorCode = error.code;

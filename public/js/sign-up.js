@@ -71,7 +71,7 @@ submit.addEventListener("click", function (event) {
     .then(() => {
       console.log("User data saved to RTDB.");
       // Redirect to a different page
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     })
     .catch((error) => {
       console.error("Error saving to RTDB:", error);
