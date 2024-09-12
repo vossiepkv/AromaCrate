@@ -13,31 +13,21 @@
   </head>
 
   <body>
-    <script src="js/product.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script type="module" src="js/index.js"></script>
-
-    <!--Navigation Bar-->
-  <div class="sidenav">
-  <a href="../index.html"><img class="home-button" src="imgs/home.png">Home</a>
-  <a href="product.html"><img class="product-button" src="imgs/box.png">Products</a>
-  <a href="contact.html"><img class="contact-button" src="imgs/mobile.png">Contact Us</a>
-  <a href="about.html"><img class="about-button" src="imgs/information-button.png">About Us</a>
-  <a id="account-link" href="account.html"><img class="account-button" src="imgs/profile-user.png">Account</a>
-  <div class="avatar-group">
-    <img id="avatar-img" src="" style="margin-top: 10px; height: 75px; width: 75px; border-radius: 50%; box-sizing: border-box; margin: 15px 15px;">
-  </div>
-  <div class="user-status" id="user-status" style="padding-left: 15px;">
-
-
-    <!-- Links will be inserted here by JavaScript -->
-  </div>
-  <button id="logout-button" class="d-none">Logout</button>
-  
-
-
-</div>
+    <!-- Navigation Bar -->
+    <div class="sidenav">
+      <a href="../index.html"><img class="home-button" src="imgs/home.png">Home</a>
+      <a href="product.html"><img class="product-button" src="imgs/box.png">Products</a>
+      <a href="contact.html"><img class="contact-button" src="imgs/mobile.png">Contact Us</a>
+      <a href="about.html"><img class="about-button" src="imgs/information-button.png">About Us</a>
+      <a id="account-link" href="account.html"><img class="account-button" src="imgs/profile-user.png">Account</a>
+      <div class="avatar-group">
+        <img id="avatar-img" src="" style="margin-top: 10px; height: 75px; width: 75px; border-radius: 50%; box-sizing: border-box; margin: 15px 15px;">
+      </div>
+      <div class="user-status" id="user-status" style="padding-left: 15px;">
+        <!-- Links will be inserted here by JavaScript -->
+      </div>
+      <button id="logout-button" class="d-none">Logout</button>
+    </div>
 
     <!-- Header -->
     <p class="header">Monthly Subscription</p>
@@ -53,58 +43,46 @@
         </div>
         <div class="product-description">
           <h2>Subscribe For Only <strong>$25.99</strong> a month</h2>
-          <p>
-            Description of the product goes here. This can include details about
-            the fragrance, brand, and any other relevant information.
-          </p>
-          <p>
-            Interested in seeing what some of our past boxes have had? click
-            <a href="...">here</a>
-          </p>
+          <p>Description of the product goes here. This can include details about the fragrance, brand, and any other relevant information.</p>
+          <p>Interested in seeing what some of our past boxes have had? click <a href="...">here</a></p>
         </div>
       </div>
 
       <div class="product-right">
-        <form class="product-form">
+        <form class="product-form" id="subscription-form">
           <h3>Personalise Your Subscription</h3>
           <div class="form-group">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required />
           </div>
           <div class="form-group">
-            <label for="gender">Type Of Fragrence:</label>
-            <select id="gender" name="gender">
-              <option value="male">Cologne</option>
-              <option value="female">Perfume</option>
+            <label for="subscription">Type Of Fragrance:</label>
+            <select id="subscription" name="gender">
+              <option value="Cologne">Cologne</option>
+              <option value="Perfume">Perfume</option>
             </select>
           </div>
           <div class="form-group">
             <label for="brands">Favorite Perfume Brands:</label>
-            <input
-              type="text"
-              id="brands"
-              name="brands"
-              placeholder="Gucci, Prada, Dior, etc."
-              required
-            />
+            <input type="text" id="brands" name="brands" placeholder="Gucci, Prada, Dior, etc." />
           </div>
           <div class="form-group">
             <label for="address">Shipping Address:</label>
             <textarea id="address" name="address" rows="1" required></textarea>
           </div>
           <div class="form-group">
-            <label for="address">Suburb</label>
-            <textarea id="address" name="address" rows="1" required></textarea>
+            <label for="Suburb">Suburb:</label>
+            <textarea id="Suburb" name="Suburb" rows="1" required></textarea>
           </div>
           <div class="form-group">
-            <label for="address">State:</label>
-            <textarea id="address" name="address" rows="1" required></textarea>
+            <label for="State">State:</label>
+            <textarea id="State" name="State" rows="1" required></textarea>
           </div>
           <div class="form-group">
-            <label for="address">Postcode:</label>
-            <textarea id="address" name="address" rows="1" required></textarea>
+            <label for="Postcode">Postcode:</label>
+            <textarea id="Postcode" name="Postcode" rows="1" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Subscribe Now</button>
+          <button type="submit" class="btn btn-primary">Subscribe Now!</button>
         </form>
       </div>
     </div>
@@ -113,8 +91,8 @@
     <div class="previous-products-container">
       <div class="previous-products-header">
         <h2>Previous Months' Fragrances</h2>
-        <button onclick="showPerfumes()">Perfumes</button>
-        <button onclick="showColognes()">Colognes</button>
+        <button id="show-perfumes">Perfumes</button>
+        <button id="show-colognes">Colognes</button>
         <input type="text" id="search-bar" placeholder="Search fragrances..." />
       </div>
 
@@ -168,7 +146,7 @@
           <img src="imgs/placeholder12.png" alt="Good Girl" />
           <p>Good Girl</p>
         </div>
-
+      
         <!-- Cologne Cards -->
         <div class="product-card cologne" style="display:none;">
           <img src="imgs/placeholder1.png" alt="Bleu de Chanel" />
@@ -219,31 +197,48 @@
           <p>1 Million</p>
         </div>
       </div>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5>About AromaCrates</h5>
-            <p>Information about the company goes here.</p>
-          </div>
-          <div class="col-md-4">
-            <h5>Links</h5>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Contact</h5>
-            <p>Email: contact@aromacrates.com</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!--Footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About AromaCrate</h4>
+      <p>Your monthly fragrance subscription service, delivering premium scents to your doorstep.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: support@aromacrate.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Address: 123 Fragrance Lane, Aroma City, SC 12345</p>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/aromacrate" target="_blank">Facebook</a>
+      <a href="https://twitter.com/aromacrate" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/aromacrate" target="_blank">Instagram</a>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Contact Us</a>
+      <a href="#">About Us</a>
+      <a href="#">Account</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 AromaCrate. All rights reserved.</p>
+  </div>
+</footer>
+
+
+    <!-- JavaScript files -->
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
+

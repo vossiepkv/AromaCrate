@@ -45,9 +45,15 @@ function loadUserData(userId) {
       document.getElementById('suburb').value = userData.suburb || '';
       document.getElementById('state').value = userData.state || '';
       document.getElementById('postcode').value = userData.postcode || '';
+      
       if (userData.avatar) {
         document.getElementById('avatar-img').src = userData.avatar;
       }
+
+      // Load and display subscription status
+      const subscriptionStatus = userData.subscriptionStatus || { active: false, type: 'None' };
+      document.getElementById('sub-status').value = subscriptionStatus.active ? `Active subscription: ${subscriptionStatus.type}` : 'No active subscription';
+      
     } else {
       console.log("No user data found");
     }
